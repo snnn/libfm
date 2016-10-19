@@ -112,7 +112,7 @@ int main(int argc, char **argv) {
 		cmdline.checkParameters();
 		
 		// Seed
-		long int seed = cmdline.getValue(param_seed, time(NULL));
+		unsigned int seed = cmdline.getValue(param_seed, (unsigned int)time(NULL));
 		srand ( seed );
 
 		if (! cmdline.hasParameter(param_method)) { cmdline.setValue(param_method, "mcmc"); }

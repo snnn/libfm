@@ -38,8 +38,8 @@ typedef unsigned int uint;
 
 #ifdef _WIN32
 namespace std {
-	bool isnan(double d) { return _isnan(d); }
-	bool isnan(float f) { return  _isnan(f); }
+	bool isnan(double d) { return _isnan(d) != 0; }
+	bool isnan(float f) { return  _isnan(f) != 0; }
 	bool isinf(double d) { return (! _finite(d)) && (! isnan(d)); }
 	bool isinf(float f) { return (! _finite(f)) && (! isnan(f)); }
 }

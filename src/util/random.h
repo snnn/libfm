@@ -37,13 +37,16 @@ double ran_exp();
 double ran_gamma(double alpha, double beta);
 double ran_gamma(double alpha);
 bool ran_bernoulli(double p);
-
+#if (_MSC_VER >= 1500)
+#else
 double erf(double x);	
+#endif
 double cdf_gaussian(double x, double mean, double stdev);
 double cdf_gaussian(double x);
 
 
-
+#if (_MSC_VER >= 1500)
+#else
 double erf(double x) {
 	double t;
 	if (x >= 0) {
@@ -59,7 +62,7 @@ double erf(double x) {
 		return -result;
 	}
 }
-
+#endif
 double cdf_gaussian(double x, double mean, double stdev) {
 	return 0.5 + 0.5 * erf(0.707106781 * (x-mean) / stdev);
 }

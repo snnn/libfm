@@ -85,7 +85,7 @@ class CMDLine {
 		void print_help() {
 			for (std::map< std::string, std::string >::const_iterator pv = help.begin(); pv != help.end(); ++pv) {
 			 	std::cout << "-" << pv->first;
-				for (int i=pv->first.size()+1; i < 16; i++) { std::cout << " "; } 
+				for (size_t i=pv->first.size()+1; i < 16; i++) { std::cout << " "; } 
 				std::string s_out = pv->second;
 				while (s_out.size() > 0) {
 					if (s_out.size() > (72-16)) {
